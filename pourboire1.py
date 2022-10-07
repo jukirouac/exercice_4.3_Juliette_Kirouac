@@ -37,10 +37,10 @@ match montant_facture:
     case montant_facture if montant_facture < MONTANT_MAX_POUR_POURBOIRE_FIXE:
         montant_fixe = POURBOIRE_INITIAL_MONTANT_FIXE
         taux_pourboire = POURBOIRE_INITIAL_TAUX
-    case montant_facture if montant_facture < 100:
+    case montant_facture if montant_facture < MONTANT_MAX_POUR_POURBOIRE_PETIT:
         montant_fixe = POURBOIRE_PETIT_MONTANT_FIXE
         taux_pourboire = POURBOIRE_PETIT_TAUX
-    case montant_facture if montant_facture < 200:
+    case montant_facture if montant_facture < MONTANT_MAX_POUR_POURBOIRE_MOYEN:
         montant_fixe = POURBOIRE_MOYEN_MONTANT_FIXE
         taux_pourboire = POURBOIRE_MOYEN_TAUX
     case _:
