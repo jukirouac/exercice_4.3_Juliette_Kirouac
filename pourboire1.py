@@ -11,7 +11,7 @@ from typing import Final
 import locale
 
 #  CONSTANTES
-# PMC pas besoin d'autant de constantes pour les match-case ! c'est le seul cas ou ce n'est pas obligatoire
+# PMC pas besoin d'autant de constantes pour les match-case ! c'est le seul cas ou ce n'est pas obligatoire JK
 MONTANT_MAX_POUR_POURBOIRE_FIXE: Final = 10
 MONTANT_MAX_POUR_POURBOIRE_PETIT: Final = 100
 MONTANT_MAX_POUR_POURBOIRE_MOYEN: Final = 200
@@ -25,16 +25,16 @@ POURBOIRE_GRAND_MONTANT_FIXE: Final = 0
 POURBOIRE_GRAND_TAUX: Final = 0
 
 #  VARIABLES
-# TODO mettre quelques commentaires
-montant_facture: float
-montant_avec_pourboire: float
-taux_pourboire: float
-montant_fixe: float
+# TODO mettre quelques commentaires JK
+montant_facture: float  # montant de la facture avant le pourboire
+montant_avec_pourboire: float  # montant de la facture avec le pourboire
+taux_pourboire: float  # taux du pourboire pas en pourcentage
+montant_fixe: float  # montant fixe à ajouter au pourboire
 
 #  LOGIQUE
 locale.setlocale(locale.LC_ALL, '')
 montant_facture = float(input("Quel est le montant de la facture ?"))
-# PMC ok un match case c'est bien, une série de if-elif-elif-else aurait fait l'affaire aussi
+# PMC ok un match case c'est bien, une série de if-elif-elif-else aurait fait l'affaire aussi JK
 match montant_facture:
     case montant_facture if montant_facture < MONTANT_MAX_POUR_POURBOIRE_FIXE:
         montant_fixe = POURBOIRE_INITIAL_MONTANT_FIXE
